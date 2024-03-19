@@ -1,2 +1,2 @@
-opencv-python
-pytesseract
+pip install opencv-python
+pip install pytesseract
