@@ -1,5 +1,4 @@
 import cv2
-import pytesseract
 
 # Charger l'image
 img = cv2.imread('image.jpeg')
@@ -30,12 +29,6 @@ plate = max(possible_plates, key=cv2.contourArea)
 # Extraire la région de plaque de la voiture
 x, y, w, h = cv2.boundingRect(plate)
 plate_img = img[y:y+h, x:x+w]
-
-# Utiliser pytesseract pour extraire le texte de la plaque
-text = pytesseract.image_to_string(plate_img)
-
-# Afficher le texte de la plaque
-print("Texte de la plaque :", text)
 
 # Afficher l'image avec la plaque détectée
 cv2.imshow('Plaque détectée', plate_img)
